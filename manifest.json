@@ -8,10 +8,13 @@
  },
  "app": {
  "urls": [
- "<strong>file:///home/pi/Desktop/Solitaire/index.html</strong>"
+ "https://mathematics-software.github.io/Solitaire/index.html",
+  "https://mathematics-software.github.io/Solitaire/solitaire.html",
+  "https://mathematics-software.github.io/Solitaire/nerts.html",
+  "https://mathematics-software.github.io/Solitaire/pyramid.html"
  ],
  "launch": {
- "web_url": "<strong>file:///home/pi/Desktop/Solitaire/index.html.com/</strong>"
+ "web_url": "https://mathematics-software.github.io/Solitaire/index.html"
  }
  }
  }
