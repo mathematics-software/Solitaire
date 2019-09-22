@@ -1,7 +1,7 @@
 {
  "manifest_version": 2,
- "name": "<strong>Solitaire Games</strong>",
- "description": "<strong>A collection of three Solitaire games</strong>",
+ "name": "Solitaire Games",
+ "description": "A collection of three Solitaire games",
  "version": "1.0",
  "icons": {
  "128": "128.png"
