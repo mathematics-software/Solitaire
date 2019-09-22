@@ -1,0 +1,88 @@
+html,body{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	background-color: green;
+}
+
+body{
+	padding: 15px;
+}
+
+h1{
+	font-size: 3em;
+	font-family: Cambrea;
+}
+
+#burn{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background-image: url("fire.png");
+	background-repeat: no-repeat;
+	font-size: 2em;
+	outline: none;
+	padding-left: 30px;
+	background-color: lightblue;
+}
+
+div{
+	float: left;
+	padding: 0;
+	border: 1px solid black;
+	border-radius: 12px;
+	width: 141px; 
+	height: 212px;
+}
+
+.row{
+	margin-bottom: 15px;
+	width: 100%;
+	border: none;
+}
+
+/* -212px for height - 1 for border */
+.stack{
+	margin-top: -214px;
+}
+
+.stack:first-child{
+	margin-top: 0;
+}
+
+.pile{
+	margin-right: 15px;
+}
+
+.builddown{
+	margin-top: 35px;
+}
+
+.ace .builddown, #deck .builddown, .pile#toprow .builddown{
+	margin-top: 0;
+}
+
+div#deck,div#play{
+	padding: auto;
+	border: none;
+	width: auto;
+	height: auto;
+}
+
+div#discard{
+	margin-left: 35px;
+	margin-right: 141px;
+}
+
+#deck .stack:first-child{
+	margin-right: 0;
+	margin-left: 0;
+}
+
+/* This is a rather bad hack that uses a CSS property with no effect to help JavaScript detect if element is descendent of #play without transversing the DOM. */
+/* Use getComputedStyle(node,null).content.substring(1,8) == "&#8203;"*/
+div#play *{
+	content: '&#8203;';
+}
+
+

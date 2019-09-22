@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Classic Solitaire</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<link rel="stylesheet" type="text/css" href="cards.css">
+		<link rel="manifest" type="text/json" href="manifest.json">
+		<script type="text/javascript" src="drag.js"></script>
+		<script type="text/javascript" src="shuffle.js"></script>
+		<script type="text/javascript" src="deal_solitaire.js" defer></script>
+		<script type="text/javascript" src="burn.js" defer></script>
+	</head>
+	<body>
+		<button id="burn">Burn</button>
+		<h1>Classic Solitaire</h1>
+		<!-- Top Row -->
+		<div class="row" style="margin-bottom: 15px;" id="toprow">
+			<!-- Deck -->
+			<div id="deck">
+				<div id="deck_base" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			</div>
+			
+			<!-- Discard -->
+			<div id="discard" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<div id="discard_base" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			</div>
+		
+			<!-- Ace Spots -->
+			<div ondrop="drop(event)" ondragover="allowDrop(event)" class="pile ace"></div>
+			<div ondrop="drop(event)" ondragover="allowDrop(event)" class="pile ace"></div>
+			<div ondrop="drop(event)" ondragover="allowDrop(event)" class="pile ace"></div>
+			<div ondrop="drop(event)" ondragover="allowDrop(event)" class="pile ace"></div>
+		</div>
+		
+		<!-- Bottom Row -->
+		<div id="play" class="row">
+			<!-- Playing Field -->
+			<div ondrop="drop(event)" ondragover="allowDrop(event)" id="pile7" class="pile"></div>
+			<div ondrop="drop(event)" ondragover="allowDrop(event)" id="pile6" class="pile"></div>
+			<div ondrop="drop(event)" ondragover="allowDrop(event)" id="pile5" class="pile"></div>
+			<div ondrop="drop(event)" ondragover="allowDrop(event)" id="pile4" class="pile"></div>
+			<div ondrop="drop(event)" ondragover="allowDrop(event)" id="pile3" class="pile"></div>
+			<div ondrop="drop(event)" ondragover="allowDrop(event)" id="pile2" class="pile"></div>
+			<div ondrop="drop(event)" ondragover="allowDrop(event)" id="pile1" class="pile"></div>
+		</div>
+	</body>
+</html>

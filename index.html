@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Solitaire Games</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<link rel="manifest" type="text/json" href="manifest.json">
+		<script type="text/javascript" src="drag.js"></script>
+		<style>
+			html,body{
+				padding: 0;
+			}
+			h1{
+				background-image: url("background.png");
+				text-align: center;
+				color: gold;
+				background-color: rgba(0,0,0,0.3);
+				height: 73px;
+				margin: 0;
+			}
+			figcaption{
+				color: black;
+				text-align: center;
+				font-size: 1.5em;
+				font-style: italic;
+				margin-bottom: 10px;
+			}
+			figure{
+				border: 5px solid black;
+				border-radius: 15px;
+				background-color: lightblue;
+				display: inline-block;
+			}
+			img{
+				margin: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Solitaire Games for Raspberry Pi</h1>
+			<figure onmousedown="javascript:this.style.border = '5px outset darkgray'" onmouseup="javascript:this.style.border = '5px solid black';document.location.href='file:///home/pi/Desktop/Solitaire/solitaire.html'">
+				<img src="classic.png" width="400" height="179" alt="Classic Solitaire">
+				<figcaption>
+					Classic Solitaire
+				</figcaption>
+			</figure>
+			<figure onmousedown="javascript:this.style.border = '5px outset darkgray'" onmouseup="javascript:this.style.border = '5px solid black';document.location.href='file:///home/pi/Desktop/Solitaire/nerts.html'">
+				<img src="nerts.png" width="400" height="179" alt="Nerts Solitaire">
+				<figcaption>
+					Nerts Solitaire
+				</figcaption>
+			</figure>
+	</body>
+</html>
