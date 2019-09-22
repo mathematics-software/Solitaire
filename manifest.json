@@ -3,9 +3,14 @@
  "name": "Solitaire Games",
  "description": "A collection of three Solitaire games",
  "version": "1.0",
- "icons": {
- "128": "128.png"
- },
+ "icons":[
+  {
+ "src": "128.png",
+   "sizes": "128x128",
+   "type":"image/png"
+ }
+ ],
+ "display":"fullscreen",
  "app": {
  "urls": [
  "https://mathematics-software.github.io/Solitaire/index.html",
