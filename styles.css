@@ -58,7 +58,7 @@ div{
 	margin-top: 35px;
 }
 
-.ace .builddown, #deck .builddown, .pile#toprow .builddown{
+.pile>.builddown, .ace .builddown, #deck .builddown, .pile#toprow .builddown{
 	margin-top: 0;
 }
 
