@@ -13,7 +13,7 @@ try{
 }catch(e){}
 
 function confirmLeave(){
-  document.body.innerHTML += "<div id='modal-screen'></div><div id='modal'><h2>You are about to leave this page, which will clear the current game. Are you sure you want to leave?</h2><button id='no' onclick='javascript:cancel()'>Cancel</button><button id='yes' onclick='javascript:confirmed();'>Continue</button>";
+  document.body.innerHTML += "<div id='modal-screen'></div><div id='modal'><h2>You are about to leave this page, which will clear the current game. Are you sure you want to leave?</h2><button id='no' onclick='javascript:stay()'>Cancel</button><button id='yes' onclick='javascript:confirmed();'>Continue</button>";
 }
 
 function showBorder(elem){
@@ -35,7 +35,7 @@ function confirmed(){
   }
 }
   
-function cancel(){
+function stay(){
      action = "";
      document.getElementById("modal").remove();
      document.getElementById("modal-screen").remove();
