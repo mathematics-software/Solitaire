@@ -6,11 +6,11 @@
 	outline: none;
 	padding-left: 30px;
 	background-color: lightblue;
-  width: 200px;
-  margin-right: 10px;
+  	width: 200px;
+  	margin-right: 10px;
 }
 
-#refresh{
+#new{
 	position: absolute;
 	bottom: 220px;
 	left: 220px;
@@ -18,5 +18,5 @@
 	outline: none;
 	padding-left: 30px;
 	background-color: lightblue;
-  width: 200px;
+  	width: 200px;
 }
