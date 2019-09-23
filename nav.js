@@ -47,7 +47,7 @@ try{
   classic.addEventListener("mousedown",function(e){showBorder(classic);});
   nerts.addEventListener("mousedown",function(e){showBorder(nerts);});
   pyramid.addEventListener("mousedown",function(e){showBorder(pyramid);});
-  classic.addEventListener("mouseup",function(e){directTo(classic,"solitaire.html")});
-  nerts.addEventListener("mouseup",function(e){directTo(nerts,"nerts.html")});
-  pyramid.addEventListener("mouseup",function(e){directTo(pyramid,"pyramid.html")});
+  classic.addEventListener("mouseup",function(e){directTo(classic,"solitaire.html");});
+  nerts.addEventListener("mouseup",function(e){directTo(nerts,"nerts.html");});
+  pyramid.addEventListener("mouseup",function(e){directTo(pyramid,"pyramid.html");});
 }catch(e){}
