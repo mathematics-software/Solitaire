@@ -1,4 +1,5 @@
 var restricted = false;
+document.body.innerHTML += "<button id='burn'>Burn</button>";
 
 function allowBurn(){
 	restricted = false;
