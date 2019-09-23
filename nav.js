@@ -43,6 +43,9 @@ function stay(){
      document.getElementById("modal").remove();
      document.getElementById("modal-screen").remove();
      applyNavListeners(); //A weird hack so that controls can still be used
+     if(document.getElementById("burn") != null){
+      enableBurn(); //Ditto, relies on burn.js
+     }
 }
 
 if(document.getElementById("classic") != null){
