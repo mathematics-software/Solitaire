@@ -41,4 +41,13 @@
 #modal button{
 	position: absolute;
 	bottom: 5px;
+	font-size: 2em;
+	background: lightblue;
+}
+
+#no{
+	outline: 1px solid gold;
+
+#yes{
+	margin-left: 75px;
 }
