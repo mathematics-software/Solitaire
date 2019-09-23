@@ -1,28 +1,30 @@
 var userHasDecided = false;
 var confirmed = false;
 
-document.getElementById("home").addEventListener("mouseup",function(e){
+try{
+  document.getElementById("home").addEventListener("mouseup",function(e){
   confirmLeave();
   while(!userHasDecided);
-  if(confirmed){
-    window.location.href = "https://mathematics-software.github.io/Solitaire/index.html";
-  }else{
-    userHasDecided = false;
-    document.getElementById("modal").remove();
-    document.getElementById("modal-screen").remove();
-  }
-});
-
-document.getElementById("new").addEventListener("mouseup",function(e){
-  while(!userHasDecided);
-  if(confirmed){
-    window.location.reload();
-  }else{
-    userHasDecided = false;
-    document.getElementById("modal").remove();
-    document.getElementById("modal-screen").remove();
-  }
-});
+    if(confirmed){
+      window.location.href = "https://mathematics-software.github.io/Solitaire/index.html";
+    }else{
+     userHasDecided = false;
+     document.getElementById("modal").remove();
+     document.getElementById("modal-screen").remove();
+   }
+  });
+  
+  document.getElementById("new").addEventListener("mouseup",function(e){
+    while(!userHasDecided);
+    if(confirmed){
+      window.location.reload();
+    }else{
+      userHasDecided = false;
+     document.getElementById("modal").remove();
+     document.getElementById("modal-screen").remove();
+    }
+  });
+}catch(e){}
 
 function confirmLeave(){
   document.body.innerHTML += "<div id='modal-screen'></div><div id='modal'>You are about to leave this page, which will clear the current game. Are you sure you want to continue?<button id='no' onclick='javascript:userHasDecided=true;confirmed=false;'>Cancel</button><button id='yes' onclick='javascript:userHasDecided=true;confirmed='true';'>Continue</button>";
