@@ -1,10 +1,27 @@
 document.getElementById("home").addEventListener("mouseup",function(e){
-  window.location.href = "https://mathematics-software.github.io/Solitaire/index.html";
+  confirmLeave();
+  while(!userHasDecided);
+  if(confirmed){
+    window.location.href = "https://mathematics-software.github.io/Solitaire/index.html";
+  }else{
+    document.getElementById("modal").remove();
+    document.getElementById("modal-screen").remove();
+  }
 });
 
 document.getElementById("new").addEventListener("mouseup",function(e){
-  window.location.reload();
+  while(!userHasDecided);
+  if(confirmed){
+    window.location.reload();
+  }else{
+    document.getElementById("modal").remove();
+    document.getElementById("modal-screen").remove();
+  }
 });
+
+function confirmLeave(){
+  document.body.innerHTML += "<div id='modal-screen'></div><div id='modal'>You are about to leave this page, which will clear the current game. Are you sure you want to continue?<button id='no' onclick='javascript:userHasDecided=true;confirmed=false;'>Cancel</button><button id='yes' onclick='javascript:userHasDecided=true;confirmed='true';'>Continue</button>";
+}
 
 function showBorder(elem){
   elem.style.border = '5px outset darkgray';
