@@ -44,6 +44,8 @@ div{
 html, body {
     margin: 0px;
     background-color: green;
+    padding-right: 0;
+    padding-bottom: 0;
 }
 
 .wrapper {
