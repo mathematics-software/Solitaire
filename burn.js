@@ -1,4 +1,5 @@
 var restricted = false;
+enableBurn();
 
 function allowBurn(){
 	restricted = false;
@@ -7,19 +8,20 @@ function allowBurn(){
 function putFireOut(){
 	document.getElementById("panel").remove();
 }
-
-document.getElementById("burn").addEventListener("mouseup",function(e){
-	if(!restricted && document.getElementById("discard_base").childNodes.length == 0){
-		restricted = true;
-		setTimeout(allowBurn, 3000);
-		var base = document.getElementById("deck_base");
-		base.prepend(base.lastChild);
-		var margin = -141 + (base.childNodes.length - 1);
-		document.getElementById("deck").innerHTML = '<canvas id="panel" width="141" height="20" style="margin-left: ' + margin + 'px; background-color: black; border-color: rgba(0,0,0,0); border-top-left-radius: 12px; border-top-right-radius: 12px;"></canvas>' + document.getElementById("deck").innerHTML;
-		main_init();
-		setTimeout(putFireOut,3000);
-	}
-});
+function enableBurn(){
+	document.getElementById("burn").addEventListener("mouseup",function(e){
+		if(!restricted && document.getElementById("discard_base").childNodes.length == 0){
+			restricted = true;
+			setTimeout(allowBurn, 3000);
+			var base = document.getElementById("deck_base");
+			base.prepend(base.lastChild);
+			var margin = -141 + (base.childNodes.length - 1);
+			document.getElementById("deck").innerHTML = '<canvas id="panel" width="141" height="20" style="margin-left: ' + margin + 'px; background-color: black; border-color: rgba(0,0,0,0); border-top-left-radius: 12px; border-top-right-radius: 12px;"></canvas>' + document.getElementById("deck").innerHTML;
+			main_init();
+			setTimeout(putFireOut,3000);
+		}
+	});
+}
 
 
 //From JS Bin - http://jsbin.com/qefo/6/edit?html,css,js,output
