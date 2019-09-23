@@ -32,6 +32,7 @@ function confirmed(){
     }
   }else{
     window.location.refresh();
+  }
 }
   
 function cancel(){
