@@ -6,7 +6,7 @@
 		<meta name="mobile-web-app-capable" content="yes">
 		<link rel="stylesheet" type="text/css" href="styles.css">
 		<link rel="manifest" type="text/json" href="manifest.json">
-		<script type="text/javascript" src="drag.js"></script>
+		<script type="text/javascript" src="nav.js" defer></script>
 		<style>
 			html,body{
 				padding: 0;
@@ -39,16 +39,22 @@
 	</head>
 	<body>
 		<h1>Solitaire Games for Raspberry Pi</h1>
-			<figure onmousedown="javascript:this.style.border = '5px outset darkgray'" onmouseup="javascript:this.style.border = '5px solid black';document.location.href='https://mathematics-software.github.io/Solitaire/solitaire.html'">
+			<figure id="classic">
 				<img src="classic.png" width="400" height="179" alt="Classic Solitaire">
 				<figcaption>
 					Classic Solitaire
 				</figcaption>
 			</figure>
-			<figure onmousedown="javascript:this.style.border = '5px outset darkgray'" onmouseup="javascript:this.style.border = '5px solid black';document.location.href='https://mathematics-software.github.io/Solitaire/nerts.html'">
+			<figure id="nerts">
 				<img src="nerts.png" width="400" height="179" alt="Nerts Solitaire">
 				<figcaption>
 					Nerts Solitaire
+				</figcaption>
+			</figure>
+			<figure id="pyramid">
+				<img src="pyramid.png" width="400" height="179" alt="Pyramid Solitaire">
+				<figcaption>
+					Pyramid Solitaire
 				</figcaption>
 			</figure>
 	</body>
