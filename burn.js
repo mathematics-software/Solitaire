@@ -9,6 +9,7 @@ function putFireOut(){
 	document.getElementById("panel").remove();
 }
 function enableBurn(){
+	console.log("burning enabled");
 	document.getElementById("burn").addEventListener("mouseup",function(e){
 		if(!restricted && document.getElementById("discard_base").childNodes.length == 0){
 			restricted = true;
