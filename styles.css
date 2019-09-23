@@ -3,6 +3,8 @@ html,body{
 	height: 100%;
 	margin: 0;
 	background-color: green;
+	padding-right: 0;
+	padding-bottom: 0;
 }
 
 body{
