@@ -1,9 +1,13 @@
+var userHasDecided = false;
+var confirmed = false;
+
 document.getElementById("home").addEventListener("mouseup",function(e){
   confirmLeave();
   while(!userHasDecided);
   if(confirmed){
     window.location.href = "https://mathematics-software.github.io/Solitaire/index.html";
   }else{
+    userHasDecided = false;
     document.getElementById("modal").remove();
     document.getElementById("modal-screen").remove();
   }
@@ -14,6 +18,7 @@ document.getElementById("new").addEventListener("mouseup",function(e){
   if(confirmed){
     window.location.reload();
   }else{
+    userHasDecided = false;
     document.getElementById("modal").remove();
     document.getElementById("modal-screen").remove();
   }
