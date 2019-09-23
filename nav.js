@@ -1,6 +1,6 @@
 var action = "";
 
-try{
+if(document.getElementById("home") != null){
   document.getElementById("home").addEventListener("mouseup",function(e){
     action="index.html";
     confirmLeave();
@@ -10,7 +10,7 @@ try{
     action = "reload";
     confirmLeave();
   });
-}catch(e){}
+}
 
 function confirmLeave(){
   document.body.innerHTML += "<div id='modal-screen'></div><div id='modal'><h2>You are about to leave this page, which will clear the current game. Are you sure you want to leave?</h2><button id='no' onclick='javascript:stay()'>Cancel</button><button id='yes' onclick='javascript:confirmed();'>Continue</button>";
@@ -41,7 +41,7 @@ function stay(){
      document.getElementById("modal-screen").remove();
 }
 
-try{
+if(document.getElementById("classic") != null){
   var classic = document.getElementById("classic");
   var nerts = document.getElementById("nerts");
   var pyramid = document.getElementById("pyramid");
@@ -51,4 +51,4 @@ try{
   classic.addEventListener("mouseup",function(e){directTo(classic,"solitaire.html");});
   nerts.addEventListener("mouseup",function(e){directTo(nerts,"nerts.html");});
   pyramid.addEventListener("mouseup",function(e){directTo(pyramid,"pyramid.html");});
-}catch(e){}
+}
