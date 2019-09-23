@@ -1,0 +1,74 @@
+h1{
+	font-size: 3em;
+	font-family: Cambrea;
+	padding-left: 15px;
+}
+
+#toprow div{
+	float: left;
+	padding: 0;
+	border: 1px solid black;
+	border-radius: 12px;
+	width: 141px; 
+	height: 212px;
+}
+
+
+.row{
+	margin-bottom: 15px;
+	width: 100%;
+	border: none;
+}
+
+div{
+	margin-left: 15px;
+}
+
+#discard_base, #deck_base{
+	margin-left: initial;
+}
+
+.stack{
+	margin-top: -214px;
+}
+
+.stack:first-child{
+	margin-top: 0;
+}
+
+
+
+/* Pyramid layout and Pyramid CSS from http://jsfiddle.net/volter9/ppg0pbra/5/ */
+/* Edited by Landon Teeter */
+
+html, body {
+    margin: 0px;
+    background-color: green;
+}
+
+.wrapper {
+    box-sizing: border-box;
+    padding: 5px;
+    width: 100%;
+}
+
+.wrapper .p_row {
+    font-size: 0px;
+    text-align: center;
+}
+
+.wrapper .p_row * {
+    font-size: 14px;
+}
+
+.wrapper .block {    
+    display: inline-block;
+   /* margin: 1%;*/
+    margin-bottom: -180px;
+    padding: 0;
+	border: 1px solid black;
+	border-radius: 12px;
+	width: 141px; 
+	height: 10px;
+	height: 212px;
+}
