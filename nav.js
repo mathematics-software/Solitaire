@@ -47,4 +47,4 @@ try{
   classic.addEventListener("mouseup",function(e){directTo(e.target,"solitaire.html")});
   nerts.addEventListener("mouseup",function(e){directTo(e.target,"nerts.html")});
   pyramid.addEventListener("mouseup",function(e){directTo(e.target,"pyramid.html")});
-}catch(Exception e){}
+}catch(e){}
