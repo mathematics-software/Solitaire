@@ -37,7 +37,7 @@
 	width: 33%;
 	height: 200px;
 	display: block;
-	background-color: lightgrey;
+	background-color: pearl;
 	border: 1px solid black;
 }
 
@@ -46,7 +46,10 @@
 	right: 5px;
 	bottom: 5px;
 	font-size: 2em;
-	background: lightblue;
+}
+
+#modal h2{
+	padding: 5px;
 }
 
 #no{
