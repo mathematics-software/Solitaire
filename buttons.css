@@ -1,1 +1,22 @@
+#home{
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	font-size: 2em;
+	outline: none;
+	padding-left: 30px;
+	background-color: lightblue;
+  width: 100px;
+  margin-right: 10px;
+}
 
+#refresh{
+	position: absolute;
+	bottom: 120px;
+	left: 120px;
+	font-size: 2em;
+	outline: none;
+	padding-left: 30px;
+	background-color: lightblue;
+  width: 100px;
+}
