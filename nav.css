@@ -50,9 +50,10 @@
 
 #modal h2{
 	padding: 5px;
+	font-size: 1.8em;
 }
 
 #modal button#no{
 	outline: 1px solid lightblue;
-	right: 100px;
+	right: 200px;
 }
