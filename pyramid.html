@@ -1,11 +1,36 @@
 <!DOCTYPE html>
+
+<!-- Pyramid layout and Pyramid CSS from http://jsfiddle.net/volter9/ppg0pbra/5/ -->
 <html>
 	<head>
 		<title>Pyramid Solitaire</title>
 		<meta name="robots" content="noindex,nofollow">
-		<link rel="stylesheet" type="text/css" href="styles.css">
+		<link rel="stylesheet" type="text/css" href="pyramid.css">
+		<link rel="stylesheet" type="text/css" href="cards.css">
 		<link rel="manifest" type="text/json" href="manifest.json">
-		<script type="text/javascript" src="drag.js"></script>
+		<script type="text/javascript" src="shuffle.js"></script>
+		<script type="text/javascript" src="pyramid.js" defer></script>
+		<script type="text/javascript" src="pyramid_validate.js" defer></script>
 	</head>
-	<body></body>
+	<body>
+		<h1>Pyramid Solitaire</h1>
+		<!-- Top Row -->
+		<div class="row" style="margin-bottom: 15px;" id="toprow">
+			<!-- Deck -->
+			<div id="deck" style="margin-right: 20px;">
+				<div id="deck_base" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			</div>
+			
+			<!-- Discard -->
+			<div id="discard">
+				<div id="discard_base"></div>
+			</div>
+		</div>
+		
+		<!-- Bottom Row -->
+		<div id="play" class="row">
+			<!-- Playing Field -->
+			<div class=wrapper id=pyramid_wrapper><div class=p_row><div class=block></div></div><div class=p_row><div class=block></div><div class=block></div></div><div class=p_row><div class=block></div><div class=block></div><div class=block></div></div><div class=p_row><div class=block></div><div class=block></div><div class=block></div><div class=block></div></div><div class=p_row><div class=block></div><div class=block></div><div class=block></div><div class=block></div><div class=block></div></div><div class=p_row><div class=block></div><div class=block></div><div class=block></div><div class=block></div><div class=block></div><div class=block></div></div><div class=p_row><div class=block></div><div class=block></div><div class=block></div><div class=block></div><div class=block></div><div class=block></div><div class=block></div></div></div>
+		</div>
+	</body>
 </html>
