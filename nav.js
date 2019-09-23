@@ -31,7 +31,7 @@ function confirmed(){
       window.location.href = "https://mathematics-software.github.io/Solitaire/" + action;
     }
   }else{
-    window.location.refresh();
+    window.location.reload();
   }
 }
   
