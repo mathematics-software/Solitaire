@@ -1,15 +1,18 @@
 var action = "";
+applyNavListeners();
 
-if(document.getElementById("home") != null){
-  document.getElementById("home").addEventListener("mouseup",function(e){
-    action="index.html";
-    confirmLeave();
-  });
+function applyNavListeners(){ 
+  if(document.getElementById("home") != null){
+    document.getElementById("home").addEventListener("mouseup",function(e){
+      action="index.html";
+      confirmLeave();
+    });
   
-  document.getElementById("new").addEventListener("mouseup",function(e){
-    action = "reload";
-    confirmLeave();
-  });
+    document.getElementById("new").addEventListener("mouseup",function(e){
+      action = "reload";
+      confirmLeave();
+    });
+  }
 }
 
 function confirmLeave(){
@@ -39,6 +42,7 @@ function stay(){
      action = "";
      document.getElementById("modal").remove();
      document.getElementById("modal-screen").remove();
+     applyNavListeners(); //A weird hack so that controls can still be used
 }
 
 if(document.getElementById("classic") != null){
