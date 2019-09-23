@@ -6,13 +6,13 @@
 	outline: none;
 	padding-left: 30px;
 	background-color: lightblue;
-  	width: 200px;
+  	width: 150px;
   	margin-right: 10px;
 }
 
 #new{
 	position: absolute;
-	bottom: 220px;
+	bottom: 10px;
 	left: 220px;
 	font-size: 2em;
 	outline: none;
