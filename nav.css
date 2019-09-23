@@ -37,7 +37,7 @@
 	width: 33%;
 	height: 200px;
 	display: block;
-	background-color: pearl;
+	background-color: lightgrey;
 	border: 1px solid black;
 }
 
@@ -52,10 +52,7 @@
 	padding: 5px;
 }
 
-#no{
-	outline: 2px solid blue;
-}
-
-#yes{
-	margin-left: -75px;
+#modal button#no{
+	outline: 1px solid lightblue;
+	right: 100px;
 }
