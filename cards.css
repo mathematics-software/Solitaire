@@ -1,3 +1,7 @@
+div#deck_base, div#discard_base{
+	border: none;
+}
+
 #S0{
 	background-image: url('Cards/S0.png');
 }
