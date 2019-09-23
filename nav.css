@@ -18,3 +18,27 @@
 	background-color: lightblue;
   	width: 250px;
 }
+
+#modal-screen{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: rgba(0,0,0,0.4);
+}
+
+#modal{
+	position: absolute;
+	top: 0;
+	margin: auto;
+	width: 33%;
+	height: 200px;
+}
+
+#modal button{
+	position: absolute;
+	bottom: 5px;
+}
