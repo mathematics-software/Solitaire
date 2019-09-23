@@ -37,20 +37,21 @@
 	width: 33%;
 	height: 200px;
 	display: block;
-	background-color: lightgreen;
+	background-color: lightgrey;
 	border: 1px solid black;
 }
 
 #modal button{
 	position: absolute;
+	right: 5px;
 	bottom: 5px;
 	font-size: 2em;
 	background: lightblue;
 }
 
 #no{
-	outline: 1px solid gold;
+	outline: 1px solid blue;
 
 #yes{
-	margin-left: 75px;
+	margin-left: -75px;
 }
