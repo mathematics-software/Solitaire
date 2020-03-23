@@ -5,7 +5,7 @@ currentSelectedElement.style.border = "2px dashed blue";
 document.addEventListener("keydown", function(e){
 	if(e.code === "ArrowRight"){
 		var next = nextVisibleSibling(currentSelectedElement);
-		if(next != null){
+		if(next !== null){
 			currentSelectedElement.style.border = "1px solid black";
 			next.style.border = "2px dashed blue";
 			currentSelectedElement = next;
@@ -13,12 +13,20 @@ document.addEventListener("keydown", function(e){
 	}
 	if(e.code === "ArrowLeft"){
 		var prev = prevVisibleSibling(currentSelectedElement);
-		if(prev != null){
+		if(prev !== null){
 			currentSelectedElement.style.border = "1px solid black";
 			prev.style.border = "2px dashed blue";
 			currentSelectedElement = prev;
 		}
-	}		
+	}
+	if(e.code === "ArrowUp"){
+		var prev = firstVisibleInPrevParent(currentSelectedElement);
+		if(prev !== null){
+			currentSelectedElement.style.border = "1px solid black";
+			prev.style.border = "2px dashed blue";
+			currentSelectedElement = prev;
+		}
+	}
 });
 
 function nextVisibleSibling(element){
@@ -39,6 +47,24 @@ function prevVisibleSibling(element){
 			return element.previousSibling;
 		}else{
 			prevVisibleSibling(element);
+		}
+	}else{
+		return null;
+	}
+}
+
+function firstVisibleInPrevParent(element){
+	if(element.parentElement.previousSibling !== null){
+		var newElement = element.parentElement.previousSibling.querySelectorAll(".block")[0];
+		if(newElement.style.visibility !== "hidden"){
+			return newElement;
+		}else{
+			var nextElement = nextVisibleSibling(newElement);
+			if(nextElement.style.visibility !== null){
+				return nextElement;
+			}else{
+				return null;
+			}
 		}
 	}else{
 		return null;
