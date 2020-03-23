@@ -72,30 +72,27 @@ document.addEventListener("keydown", function(e){
 		if(!onDeck){
 			//Any visible cards on discard?
 			var discarded = document.querySelectorAll("#discard_base div");
-			var foundVisibleCard = false;
 			for(var i = discarded.length - 1; i >= 0; i--){
 				if(discarded[i].style.visiblility !== "hidden"){
 					lastBoardSelected = currentSelectedElement;
 					currentSelectedElement.style.border = "1px solid black";
 					discarded[i].style.border = "2px dashed blue";
 					currentSelectedElement = discarded[i];
-					foundVisibleCard = true;
 					onDeck = true;
-					break;
+					return;
 				}
 			}
-			if(!foundVisibleCard){
-				//Any visible on deck?
-				var deckCards = document.querySelectorAll("#deck_base div");
-				for(var i = deckCards.length - 1; i >= 0; i--){
-					if(deckCards[i].style.visiblility !== "hidden"){
-						lastBoardSelected = currentSelectedElement;
-						currentSelectedElement.style.border = "1px solid black";
-						deckCards[i].style.border = "2px dashed blue";
-						currentSelectedElement = deckCards[i];
-						onDeck = true;
-						break;
-					}
+			//If we're here, no visible cards were found on discard
+			//Any visible on deck?
+			var deckCards = document.querySelectorAll("#deck_base div");
+			for(var i = deckCards.length - 1; i >= 0; i--){
+				if(deckCards[i].style.visiblility !== "hidden"){
+					lastBoardSelected = currentSelectedElement;
+					currentSelectedElement.style.border = "1px solid black";
+					deckCards[i].style.border = "2px dashed blue";
+					currentSelectedElement = deckCards[i];
+					onDeck = true;
+					return;
 				}
 			}
 		}else{
