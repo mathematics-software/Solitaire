@@ -86,7 +86,7 @@ document.addEventListener("keydown", function(e){
 			//Any visible on deck?
 			var deckCards = document.querySelectorAll("#deck_base div");
 			for(var i = deckCards.length - 1; i >= 0; i--){
-				if(deckCards[i].style.visiblility !== "hidden"){
+				if(deckCards[i].style.visibility !== "hidden"){
 					lastBoardSelected = currentSelectedElement;
 					currentSelectedElement.style.border = "1px solid black";
 					deckCards[i].style.border = "2px dashed blue";
