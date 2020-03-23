@@ -24,12 +24,15 @@ document.addEventListener("keydown", function(e){
 			//	}
 			//}
 		}else if(parentID !== "discard_base"){
-			var topCard = document.getElementById("discard_base").querySelectorAll("div")[document.getElementById("discard_base").querySelectorAll("div").length - 1];
-			if(topCard !== null){
-				currentSelectedElement.style.border = "1px solid black";
-				topCard.style.border = "2px dashed blue";
-				currentSelectedElement = topCard;
-			} 
+			var discardedcards = document.getElementById("discard_base").querySelectorAll("div");
+			if(discardedcards.length !== 0){
+				var topCard = discardedcards[discardedcards.length - 1];
+				if(topCard !== null){
+					currentSelectedElement.style.border = "1px solid black";
+					topCard.style.border = "2px dashed blue";
+					currentSelectedElement = topCard;
+				} 
+			}
 		}
 	}
 	if(e.code === "ArrowLeft"){
@@ -49,12 +52,15 @@ document.addEventListener("keydown", function(e){
 			//	}
 			//}
 		}else if(parentID !== "deck_base"){
-			var topCard = document.getElementById("deck_base").querySelectorAll("div")[document.getElementById("deck_base").querySelectorAll("div").length - 1];
-			if(topCard !== null){
-				currentSelectedElement.style.border = "1px solid black";
-				topCard.style.border = "2px dashed blue";
-				currentSelectedElement = topCard;
-			} 
+			var deckofcards = document.getElementById("deck_base").querySelectorAll("div");
+			if(deckofcards.length !== 0){
+				var topCard = deckofcards[deckofcards.length - 1];
+				if(topCard !== null){
+					currentSelectedElement.style.border = "1px solid black";
+					topCard.style.border = "2px dashed blue";
+					currentSelectedElement = topCard;
+				} 
+			}
 		}
 	}
 	if(e.code === "ArrowUp"){
