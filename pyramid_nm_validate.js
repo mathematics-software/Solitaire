@@ -45,6 +45,7 @@ function nextVisibleSibling(element){
 		if(element.nextSibling.style.visibility !== "hidden"){
 			return element.nextSibling;
 		}else{
+			console.log("The next sibling of element #" + element.getAttribute("id") + " is not visible. Checking the sibling after it...");
 			return nextVisibleSibling(element);
 		}
 	}else{
@@ -57,6 +58,7 @@ function prevVisibleSibling(element){
 		if(element.previousSibling.style.visibility !== "hidden"){
 			return element.previousSibling;
 		}else{
+			console.log("Previous sibling of element #" + element.getAttribute("id") + " is not visible. Checking the sibling before it...";
 			return prevVisibleSibling(element);
 		}
 	}else{
