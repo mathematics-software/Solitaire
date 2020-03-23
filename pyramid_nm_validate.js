@@ -1,6 +1,6 @@
 var clickstack = [];
 
-var currentSelectedElement = document.querySelectorAll(".p_row")[document.querySelectorAll(".p_row").length - 1]).querySelectorAll(".block")[0];
+var currentSelectedElement = document.querySelectorAll(".p_row")[document.querySelectorAll(".p_row").length - 1].querySelectorAll(".block")[0];
 currentSelectedElement.style.border = "2px dashed blue";
 document.addEventListener("keydown", function(e){
 	if(e.code = "ArrowRight"){
