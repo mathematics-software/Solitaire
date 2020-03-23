@@ -4,15 +4,33 @@ var currentSelectedElement = document.querySelectorAll(".p_row")[document.queryS
 currentSelectedElement.style.border = "2px dashed blue";
 document.addEventListener("keydown", function(e){
 	if(e.code === "ArrowRight"){
-		var next = nextVisibleSibling(currentSelectedElement);
-		if(next !== null){
-			currentSelectedElement.style.border = "1px solid black";
-			next.style.border = "2px dashed blue";
-			currentSelectedElement = next;
+		var parentID = currentSelectedElement.parentElement.getAttribute("id");
+		if(parentID !== "discard_base" && parentID !== "deck_base"){
+			var next = nextVisibleSibling(currentSelectedElement);
+			if(next !== null){
+				currentSelectedElement.style.border = "1px solid black";
+				next.style.border = "2px dashed blue";
+				currentSelectedElement = next;
+			}else{
+				var topCard = document.getElementById("discard_base").querySelectorAll("div")[document.getElementById("discard_base").querySelectorAll("div").length - 1];
+				if(topCard !== null){
+					currentSelectedElement.style.border = "1px solid black";
+					topCard.style.border = "2px dashed blue";
+					currentSelectedElement = topCard;
+				}
+			}
+		}else if(parentID !== "discard_base"){
+			var topCard = document.getElementById("discard_base").querySelectorAll("div")[document.getElementById("discard_base").querySelectorAll("div").length - 1];
+			if(topCard !== null){
+				currentSelectedElement.style.border = "1px solid black";
+				topCard.style.border = "2px dashed blue";
+				currentSelectedElement = topCard;
+			} 
 		}
 	}
 	if(e.code === "ArrowLeft"){
-		if(currentSelectedElement.parentElement.getAttribute("id") !== "discard_base"){
+		var parentID = currentSelectedElement.parentElement.getAttribute("id");
+		if(parentID !== "discard_base" && parentID !== "deck_base"){
 			var prev = prevVisibleSibling(currentSelectedElement);
 			if(prev !== null){
 				currentSelectedElement.style.border = "1px solid black";
@@ -26,13 +44,13 @@ document.addEventListener("keydown", function(e){
 					currentSelectedElement = topCard;
 				}
 			}
-		}else if(currentSelectedElement.parentElement.getAttribute("id" !== "deck_base"){
+		}else if(parentID !== "deck_base"){
 			var topCard = document.getElementById("deck_base").querySelectorAll("div")[document.getElementById("deck_base").querySelectorAll("div").length - 1];
-				if(topCard !== null){
-					currentSelectedElement.style.border = "1px solid black";
-					topCard.style.border = "2px dashed blue";
-					currentSelectedElement = topCard;
-				} 
+			if(topCard !== null){
+				currentSelectedElement.style.border = "1px solid black";
+				topCard.style.border = "2px dashed blue";
+				currentSelectedElement = topCard;
+			} 
 		}
 	}
 	if(e.code === "ArrowUp"){
