@@ -3,7 +3,7 @@ var clickstack = [];
 var currentSelectedElement = document.querySelectorAll(".p_row")[document.querySelectorAll(".p_row").length - 1].querySelectorAll(".block")[0];
 currentSelectedElement.style.border = "2px dashed blue";
 document.addEventListener("keydown", function(e){
-	if(e.code = "ArrowRight"){
+	if(e.code === "ArrowRight"){
 		var next = nextVisibleSibling(currentSelectedElement);
 		if(next != null){
 			currentSelectedElement.style.border = "1px solid black";
@@ -11,7 +11,7 @@ document.addEventListener("keydown", function(e){
 			currentSelectedElement = next;
 		}
 	}
-	if(e.code = "ArrowLeft"){
+	if(e.code === "ArrowLeft"){
 		var prev = prevVisibleSibling(currentSelectedElement);
 		if(prev != null){
 			currentSelectedElement.style.border = "1px solid black";
