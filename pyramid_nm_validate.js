@@ -22,7 +22,7 @@ document.addEventListener("keydown", function(e){
 			//		topCard.style.border = "2px dashed blue";
 			//		currentSelectedElement = topCard;
 			//	}
-			}
+			//}
 		}else if(parentID !== "discard_base"){
 			var topCard = document.getElementById("discard_base").querySelectorAll("div")[document.getElementById("discard_base").querySelectorAll("div").length - 1];
 			if(topCard !== null){
