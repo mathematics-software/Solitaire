@@ -15,14 +15,7 @@ document.addEventListener("keydown", function(e){
 				currentSelectedElement.style.border = "1px solid black";
 				next.style.border = "2px dashed blue";
 				currentSelectedElement = next;
-			}//else{
-			//	var topCard = document.getElementById("discard_base").querySelectorAll("div")[document.getElementById("discard_base").querySelectorAll("div").length - 1];
-			//	if(topCard !== null){
-			//		currentSelectedElement.style.border = "1px solid black";
-			//		topCard.style.border = "2px dashed blue";
-			//		currentSelectedElement = topCard;
-			//	}
-			//}
+			}
 		}else if(parentID !== "discard_base"){
 			var discardedcards = document.getElementById("discard_base").querySelectorAll("div");
 			if(discardedcards.length !== 0){
@@ -43,14 +36,7 @@ document.addEventListener("keydown", function(e){
 				currentSelectedElement.style.border = "1px solid black";
 				prev.style.border = "2px dashed blue";
 				currentSelectedElement = prev;
-			}//else{
-			//	var topCard = document.getElementById("discard_base").querySelectorAll("div")[document.getElementById("discard_base").querySelectorAll("div").length - 1];
-			//	if(topCard !== null){
-			//		currentSelectedElement.style.border = "1px solid black";
-			//		topCard.style.border = "2px dashed blue";
-			//		currentSelectedElement = topCard;
-			//	}
-			//}
+			}
 		}else if(parentID !== "deck_base"){
 			var deckofcards = document.getElementById("deck_base").querySelectorAll("div");
 			if(deckofcards.length !== 0){
@@ -94,6 +80,7 @@ document.addEventListener("keydown", function(e){
 					discarded[i].style.border = "2px dashed blue";
 					currentSelectedElement = discarded[i];
 					foundVisibleCard = true;
+					onDeck = true;
 					break;
 				}
 			}
@@ -106,6 +93,7 @@ document.addEventListener("keydown", function(e){
 						currentSelectedElement.style.border = "1px solid black";
 						deckCards[i].style.border = "2px dashed blue";
 						currentSelectedElement = deckCards[i];
+						onDeck = true;
 						break;
 					}
 				}
@@ -114,6 +102,7 @@ document.addEventListener("keydown", function(e){
 			currentSelectedElement.style.border = "1px solid black";
 			lastBoardSelected.style.border = "2px dashed blue";
 			currentSelectedElement = lastBoardSelected;
+			onDeck = false;
 		}
 	}
 		
