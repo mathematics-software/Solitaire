@@ -73,7 +73,7 @@ document.addEventListener("keydown", function(e){
 			//Any visible cards on discard?
 			var discarded = document.querySelectorAll("#discard_base div");
 			for(var i = discarded.length - 1; i >= 0; i--){
-				if(discarded[i].style.visiblility !== "hidden"){
+				if(discarded[i].style.visibility !== "hidden"){
 					lastBoardSelected = currentSelectedElement;
 					currentSelectedElement.style.border = "1px solid black";
 					discarded[i].style.border = "2px dashed blue";
@@ -170,7 +170,11 @@ function firstVisibleInNextParent(element){
 function HandleSelection(id){
 	console.log(id);
 	console.log(id.length);
+	//We're drawing a card
 	if(document.getElementById(id).parentElement.getAttribute("id") === "deck_base"){
+		//First, clear the stack
+		clear();
+		//Now, draw the card!
 		var cards = document.getElementById("deck_base").childNodes;
 		var len = cards.length;
 		var discard = document.getElementById("discard_base");
@@ -198,7 +202,7 @@ function HandleSelection(id){
 	}
 	if(id.length == 2 || id.length == 3){
 		//It is a card
-		document.getElementById(id).style.outline = "1px solid blue";
+		document.getElementById(id).style.outline = "2px solid blue";
 		if(id.substring(1) == 12){
 			document.getElementById(id).style.visibility = "hidden";
 			return;
