@@ -119,7 +119,7 @@ function nextVisibleSibling(element){
 			return element.nextSibling;
 		}else{
 			console.log("The next sibling of element #" + element.getAttribute("id") + " is not visible. Checking the sibling after it...");
-			return nextVisibleSibling(element);
+			return nextVisibleSibling(element.nextSibling);
 		}
 	}else{
 		return null;
@@ -132,7 +132,7 @@ function prevVisibleSibling(element){
 			return element.previousSibling;
 		}else{
 			console.log("Previous sibling of element #" + element.getAttribute("id") + " is not visible. Checking the sibling before it...");
-			return prevVisibleSibling(element);
+			return prevVisibleSibling(element.previousSibling);
 		}
 	}else{
 		return null;
