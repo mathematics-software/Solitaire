@@ -2,6 +2,10 @@ var clickstack = [];
 
 var currentSelectedElement = document.querySelectorAll(".p_row")[document.querySelectorAll(".p_row").length - 1].querySelectorAll(".block")[0];
 currentSelectedElement.style.border = "2px dashed blue";
+
+var onDeck = false;
+var lastBoardSelected;
+
 document.addEventListener("keydown", function(e){
 	if(e.code === "ArrowRight"){
 		var parentID = currentSelectedElement.parentElement.getAttribute("id");
@@ -11,13 +15,13 @@ document.addEventListener("keydown", function(e){
 				currentSelectedElement.style.border = "1px solid black";
 				next.style.border = "2px dashed blue";
 				currentSelectedElement = next;
-			}else{
-				var topCard = document.getElementById("discard_base").querySelectorAll("div")[document.getElementById("discard_base").querySelectorAll("div").length - 1];
-				if(topCard !== null){
-					currentSelectedElement.style.border = "1px solid black";
-					topCard.style.border = "2px dashed blue";
-					currentSelectedElement = topCard;
-				}
+			}//else{
+			//	var topCard = document.getElementById("discard_base").querySelectorAll("div")[document.getElementById("discard_base").querySelectorAll("div").length - 1];
+			//	if(topCard !== null){
+			//		currentSelectedElement.style.border = "1px solid black";
+			//		topCard.style.border = "2px dashed blue";
+			//		currentSelectedElement = topCard;
+			//	}
 			}
 		}else if(parentID !== "discard_base"){
 			var topCard = document.getElementById("discard_base").querySelectorAll("div")[document.getElementById("discard_base").querySelectorAll("div").length - 1];
@@ -36,14 +40,14 @@ document.addEventListener("keydown", function(e){
 				currentSelectedElement.style.border = "1px solid black";
 				prev.style.border = "2px dashed blue";
 				currentSelectedElement = prev;
-			}else{
-				var topCard = document.getElementById("discard_base").querySelectorAll("div")[document.getElementById("discard_base").querySelectorAll("div").length - 1];
-				if(topCard !== null){
-					currentSelectedElement.style.border = "1px solid black";
-					topCard.style.border = "2px dashed blue";
-					currentSelectedElement = topCard;
-				}
-			}
+			}//else{
+			//	var topCard = document.getElementById("discard_base").querySelectorAll("div")[document.getElementById("discard_base").querySelectorAll("div").length - 1];
+			//	if(topCard !== null){
+			//		currentSelectedElement.style.border = "1px solid black";
+			//		topCard.style.border = "2px dashed blue";
+			//		currentSelectedElement = topCard;
+			//	}
+			//}
 		}else if(parentID !== "deck_base"){
 			var topCard = document.getElementById("deck_base").querySelectorAll("div")[document.getElementById("deck_base").querySelectorAll("div").length - 1];
 			if(topCard !== null){
@@ -72,6 +76,41 @@ document.addEventListener("keydown", function(e){
 	if(e.code === "Enter"){
 		HandleSelection(currentSelectedElement.getAttribute("id"));
 	}
+	if(e.code === "KeyD"){
+		if(!onDeck){
+			//Any visible cards on discard?
+			var discarded = document.querySelectorAll("#discard_base div");
+			var foundVisibleCard = false;
+			for(var i = discarded.length - 1; i >= 0; i--){
+				if(discarded[i].style.visiblility !== "hidden"){
+					lastBoardSelected = currentSelectedElement;
+					currentSelectedElement.style.border = "1px solid black";
+					discarded[i].style.border = "2px dashed blue";
+					currentSelectedElement = discarded[i];
+					foundVisibleCard = true;
+					break;
+				}
+			}
+			if(!foundVisibleCard){
+				//Any visible on deck?
+				var deckCards = document.querySelectorAll("#deck_base div");
+				for(var i = deckCards.length - 1; i >= 0; i--){
+					if(deckCards[i].style.visiblility !== "hidden"){
+						lastBoardSelected = currentSelectedElement;
+						currentSelectedElement.style.border = "1px solid black";
+						deckCards[i].style.border = "2px dashed blue";
+						currentSelectedElement = deckCards[i];
+						break;
+					}
+				}
+			}
+		}else{
+			currentSelectedElement.style.border = "1px solid black";
+			lastBoardSelected.style.border = "2px dashed blue";
+			currentSelectedElement = lastBoardSelected;
+		}
+	}
+		
 });
 
 function nextVisibleSibling(element){
