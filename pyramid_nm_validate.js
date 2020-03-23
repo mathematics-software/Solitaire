@@ -49,7 +49,7 @@ function HandleSelection(id){
 			console.log("body");
 		clear();
 	}
-});
+}
 
 function clear(){
 	for(var i = 0; i<clickstack.length+1; i++){
