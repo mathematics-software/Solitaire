@@ -36,7 +36,9 @@
 			<!-- Playing Field -->
 			<div class=wrapper id=pyramid_wrapper><div class=p_row><div class=block></div></div><div class=p_row><div class=block></div><div class=block></div></div><div class=p_row><div class=block></div><div class=block></div><div class=block></div></div><div class=p_row><div class=block></div><div class=block></div><div class=block></div><div class=block></div></div><div class=p_row><div class=block></div><div class=block></div><div class=block></div><div class=block></div><div class=block></div></div><div class=p_row><div class=block></div><div class=block></div><div class=block></div><div class=block></div><div class=block></div><div class=block></div></div><div class=p_row><div class=block></div><div class=block></div><div class=block></div><div class=block></div><div class=block></div><div class=block></div><div class=block></div></div></div>
 		</div>
-		<h2>Key Commands</h2>
+		<div style="height: 100px;">&nbsp;</div>
+		<h2>How to Play</h2>
+		<p>The current card (the one to which any actions made apply) is highlighted with a dashed blue border. Selected cards (those that are to be played) are highlighted with a solid blue border.</p>
 		<br>
 		<ul>
 			<li>Left Arrow: Move to the card to the left of the current card, or to the deck from the discard pile.</li>
@@ -45,13 +47,13 @@
 			<li>Down Arrow: Move to the first visible card on the row of the pyramid directly below the current card. This button has no effect if you are on the deck or discard piles.</li>
 			<li>Enter: If you not on the deck, the current card is selected. Once two matching cards (or one king) are selected, they are removed. If you are on the deck, the uppermost card is drawn if possible.</li>
 			<li>D: If you are on one of the rows of the pyramid, this moves you to the deck. If you are on the deck, it moves you to the last selected card on the pyramid. This card may have been removed, so the arrow keys may have to be used to obtain a visible card.</li>
-			<li>Ctrl+N: Starts a new game. There is no prompt to cancel this action, so be sure you are completely finished before performing this action!</li>
+			<li>Ctrl+G: Starts a new game. There is no prompt to cancel this action, so be sure you are completely finished before performing this action!</li>
 		</ul>
 	</body>
 	<!-- SCRIPT FOR NEW GAME -->
 	<script>
 		document.body.addEventListener("keydown", function(e){
-			if(e.ctrlKey && e.key === "n"){
+			if(e.ctrlKey && e.key === "g"){
 				window.location.reload(false);
 			}
 		});
