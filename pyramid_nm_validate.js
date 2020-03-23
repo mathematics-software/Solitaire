@@ -45,7 +45,7 @@ function nextVisibleSibling(element){
 		if(element.nextSibling.style.visibility !== "hidden"){
 			return element.nextSibling;
 		}else{
-			nextVisibleSibling(element);
+			return nextVisibleSibling(element);
 		}
 	}else{
 		return null;
@@ -57,7 +57,7 @@ function prevVisibleSibling(element){
 		if(element.previousSibling.style.visibility !== "hidden"){
 			return element.previousSibling;
 		}else{
-			prevVisibleSibling(element);
+			return prevVisibleSibling(element);
 		}
 	}else{
 		return null;
