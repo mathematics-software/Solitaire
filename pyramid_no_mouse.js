@@ -1,6 +1,19 @@
 var clickstack = [];
 
+var currentSelectedElement = document.querySelectorAll(".p_row")[document.querySelectorAll(".p_row").length - 1]).querySelectorAll(".block")[0];
+currentSelectedElement.style.border = "2px dashed blue";
 document.addEventListener("keydown", function(e){
+	if(e.code === "ArrowRight"){
+		if(currentSelectedElement.nextSibling !== null){
+			currentSelectedElement.style.border = "1px solid black";
+			currentSelectedElement = currentSelectedElement.nextSibling;
+			currentSelectedElement.style.border = "2px dashed blue";
+		}else{
+			if(currentSelectedElement.parentElement.nextSibling !== null && currentSelected){
+				currentSelectedElement.style.border = "1px solid black";
+			}
+		}
+	}
 });
 
 function HandleSelection(id){
