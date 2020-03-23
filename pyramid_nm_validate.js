@@ -225,6 +225,9 @@ function HandleSelection(id){
 
 function clear(){
 	for(var i = 0; i<clickstack.length+1; i++){
-		document.getElementById(clickstack.pop()).style.outline = "none";
+		var element = document.getElementById(clickstack.pop());
+		if(element !== null){
+			element.style.outline = "none";
+		}
 	}
 }
