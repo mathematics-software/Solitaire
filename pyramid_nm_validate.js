@@ -27,6 +27,17 @@ document.addEventListener("keydown", function(e){
 			currentSelectedElement = prev;
 		}
 	}
+	if(e.code === "ArrowDown"){
+		var next = firstVisibleInNextParent(currentSelectedElement);
+		if(next !== null){
+			currentSelectedElement.style.border = "1px solid black";
+			next.style.border = "2px dashed blue";
+			currentSelectedElement = next;
+		}
+	}
+	if(e.code === "Enter"){
+		HandleSelection(currentSelectedElement.getAttribute("id"));
+	}
 });
 
 function nextVisibleSibling(element){
@@ -56,6 +67,24 @@ function prevVisibleSibling(element){
 function firstVisibleInPrevParent(element){
 	if(element.parentElement.previousSibling !== null){
 		var newElement = element.parentElement.previousSibling.querySelectorAll(".block")[0];
+		if(newElement.style.visibility !== "hidden"){
+			return newElement;
+		}else{
+			var nextElement = nextVisibleSibling(newElement);
+			if(nextElement.style.visibility !== null){
+				return nextElement;
+			}else{
+				return null;
+			}
+		}
+	}else{
+		return null;
+	}
+}
+
+function firstVisibleInNextParent(element){
+	if(element.parentElement.nextSibling !== null){
+		var newElement = element.parentElement.nextSibling.querySelectorAll(".block")[0];
 		if(newElement.style.visibility !== "hidden"){
 			return newElement;
 		}else{
