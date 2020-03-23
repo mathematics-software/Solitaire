@@ -12,11 +12,27 @@ document.addEventListener("keydown", function(e){
 		}
 	}
 	if(e.code === "ArrowLeft"){
-		var prev = prevVisibleSibling(currentSelectedElement);
-		if(prev !== null){
-			currentSelectedElement.style.border = "1px solid black";
-			prev.style.border = "2px dashed blue";
-			currentSelectedElement = prev;
+		if(currentSelectedElement.parentElement.getAttribute("id") !== "discard_base"){
+			var prev = prevVisibleSibling(currentSelectedElement);
+			if(prev !== null){
+				currentSelectedElement.style.border = "1px solid black";
+				prev.style.border = "2px dashed blue";
+				currentSelectedElement = prev;
+			}else{
+				var topCard = document.getElementById("discard_base").querySelectorAll("div")[document.getElementById("discard_base").querySelectorAll("div").length - 1];
+				if(topCard !== null){
+					currentSelectedElement.style.border = "1px solid black";
+					topCard.style.border = "2px dashed blue";
+					currentSelectedElement = topCard;
+				}
+			}
+		}else if(currentSelectedElement.parentElement.getAttribute("id" !== "deck_base"){
+			var topCard = document.getElementById("deck_base").querySelectorAll("div")[document.getElementById("deck_base").querySelectorAll("div").length - 1];
+				if(topCard !== null){
+					currentSelectedElement.style.border = "1px solid black";
+					topCard.style.border = "2px dashed blue";
+					currentSelectedElement = topCard;
+				} 
 		}
 	}
 	if(e.code === "ArrowUp"){
@@ -58,7 +74,7 @@ function prevVisibleSibling(element){
 		if(element.previousSibling.style.visibility !== "hidden"){
 			return element.previousSibling;
 		}else{
-			console.log("Previous sibling of element #" + element.getAttribute("id") + " is not visible. Checking the sibling before it...";
+			console.log("Previous sibling of element #" + element.getAttribute("id") + " is not visible. Checking the sibling before it...");
 			return prevVisibleSibling(element);
 		}
 	}else{
