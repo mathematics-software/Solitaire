@@ -173,6 +173,32 @@ function firstVisibleInNextParent(element){
 function HandleSelection(id){
 	console.log(id);
 	console.log(id.length);
+	if(document.getElementById(id).parentElement.getAttribute("id") === "deck_base"){
+		var cards = document.getElementById("deck_base").childNodes;
+		var len = cards.length;
+		var discard = document.getElementById("discard_base");
+		if(len > 0){
+			discard.appendChild(cards[len-1]);
+			//Select final child of discard base
+			var discardedcards = document.getElementById("discard_base").querySelectorAll("div");
+			if(discardedcards.length !== 0){
+				var topCard = discardedcards[discardedcards.length - 1];
+				if(topCard !== null){
+					currentSelectedElement.style.border = "1px solid black";
+					topCard.style.border = "2px dashed blue";
+					currentSelectedElement = topCard;
+				} 
+			}
+		}else{
+			cards = document.getElementById("discard_base").childNodes;
+			len = cards.length;
+			var draw = document.getElementById("deck_base");
+			for(var i = len-1; i>=0; i--){
+				draw.appendChild(cards[i]);
+			}
+		}
+		return;
+	}
 	if(id.length == 2 || id.length == 3){
 		//It is a card
 		document.getElementById(id).style.outline = "1px solid blue";
