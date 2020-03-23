@@ -17,14 +17,16 @@ document.addEventListener("keydown", function(e){
 				currentSelectedElement = next;
 			}
 		}else if(parentID !== "discard_base"){
-			var discardedcards = document.getElementById("discard_base").querySelectorAll("div");
-			if(discardedcards.length !== 0){
-				var topCard = discardedcards[discardedcards.length - 1];
-				if(topCard !== null){
-					currentSelectedElement.style.border = "1px solid black";
-					topCard.style.border = "2px dashed blue";
-					currentSelectedElement = topCard;
-				} 
+			var discarded = document.querySelectorAll("#discard_base div");
+			if(discarded.length > 0){
+				for(var i = discarded.length - 1; i >= 0; i--){
+					if(discarded[i].style.visibility !== "hidden"){
+						currentSelectedElement.style.border = "1px solid black";
+						discarded[i].style.border = "2px dashed blue";
+						currentSelectedElement = discarded[i];
+						return;
+					}
+				}
 			}
 		}
 	}
@@ -39,6 +41,7 @@ document.addEventListener("keydown", function(e){
 			}
 		}else if(parentID !== "deck_base"){
 			var deckofcards = document.getElementById("deck_base").querySelectorAll("div");
+			//Don't have to worry about visibility since cards are removed from deck_base
 			if(deckofcards.length !== 0){
 				var topCard = deckofcards[deckofcards.length - 1];
 				if(topCard !== null){
