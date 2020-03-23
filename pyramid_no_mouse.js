@@ -3,18 +3,27 @@ var clickstack = [];
 var currentSelectedElement = document.querySelectorAll(".p_row")[document.querySelectorAll(".p_row").length - 1]).querySelectorAll(".block")[0];
 currentSelectedElement.style.border = "2px dashed blue";
 document.addEventListener("keydown", function(e){
-	if(e.code === "ArrowRight"){
-		if(currentSelectedElement.nextSibling !== null){
+	if(e.code = "ArrowRight"){
+		var next = nextVisibleSibling(currentSelectedElement);
+		if(next != null){
 			currentSelectedElement.style.border = "1px solid black";
-			currentSelectedElement = currentSelectedElement.nextSibling;
-			currentSelectedElement.style.border = "2px dashed blue";
-		}else{
-			if(currentSelectedElement.parentElement.nextSibling !== null && currentSelected){
-				currentSelectedElement.style.border = "1px solid black";
-			}
+			next.style.border = "2px solid blue";
+			currentSelectedElement = next;
 		}
 	}
 });
+
+function nextVisibleSibling(element){
+	if(element.nextSibling !== null){
+		if(element.nextSibling.style.visibility !== "hidden"){
+			return element.nextSibling;
+		}else{
+			nextVisibleSibling(element);
+		}
+	}else{
+		return null;
+	}
+}
 
 function HandleSelection(id){
 	console.log(id);
