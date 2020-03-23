@@ -7,10 +7,18 @@ document.addEventListener("keydown", function(e){
 		var next = nextVisibleSibling(currentSelectedElement);
 		if(next != null){
 			currentSelectedElement.style.border = "1px solid black";
-			next.style.border = "2px solid blue";
+			next.style.border = "2px dashed blue";
 			currentSelectedElement = next;
 		}
 	}
+	if(e.code = "ArrowLeft"){
+		var prev = prevVisibleSibling(currentSelectedElement);
+		if(prev != null){
+			currentSelectedElement.style.border = "1px solid black";
+			prev.style.border = "2px dashed blue";
+			currentSelectedElement = prev;
+		}
+	}		
 });
 
 function nextVisibleSibling(element){
@@ -19,6 +27,18 @@ function nextVisibleSibling(element){
 			return element.nextSibling;
 		}else{
 			nextVisibleSibling(element);
+		}
+	}else{
+		return null;
+	}
+}
+
+function prevVisibleSibling(element){
+	if(element.prevSibling !== null){
+		if(element.prevSibling.style.visibility !== "hidden"){
+			return element.prevSibling;
+		}else{
+			prevVisibleSibling(element);
 		}
 	}else{
 		return null;
